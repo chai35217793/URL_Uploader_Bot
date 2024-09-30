@@ -18,7 +18,7 @@ class Upload:
     def __init__(self, bot, update, old_msg, filename, downloadFolder):
         self.bot = bot
         self.userid = update.chat.id
-        self.msg_id = update.message.id
+        self.msg_id = update.id
         self.old_msg = old_msg
         self.filename = filename
         self.downloadFolder = downloadFolder
