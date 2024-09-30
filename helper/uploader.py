@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-
+from pyrogram.enums import ParseMode
 """Importing"""
 # Importing External Packages
 from pyrogram.errors import exceptions
@@ -28,7 +28,7 @@ class Upload:
 
         async def editMessage(progress_bar, percentage, completed, speed, remaining):
             try:
-                self.old_msg = await self.bot.edit_message_text(self.userid, self.old_msg.message_id, f"<b>Now Uploading... !! Have patience... ⌛\n [{progress_bar}]\n📊Percentage: {percentage} %\n✅Completed: {completed} MB\n🚀Speed: {speed} MB/s\n⌚️Remaining Time: {remaining} seconds</b>", parse_mode = 'html')
+                self.old_msg = await self.bot.edit_message_text(self.userid, self.old_msg.message_id, f"<b>Now Uploading... !! Have patience... ⌛\n [{progress_bar}]\n📊Percentage: {percentage} %\n✅Completed: {completed} MB\n🚀Speed: {speed} MB/s\n⌚️Remaining Time: {remaining} seconds</b>", parse_mode=ParseMode.HTML)
             except exceptions.bad_request_400.MessageNotModified:
                 pass
 
