@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+from pyrogram.enums import ParseMode
 
 """Importing"""
 # Importing External Packages
@@ -20,7 +20,7 @@ async def broadcast_handler(bot, update):
         #Extracting Broadcasting Message
         message = update.text.split('/broadcast ')[1]
     except IndexError:
-        await update.reply_text(BotMessage.broadcast_failed, parse_mode = 'html')
+        await update.reply_text(BotMessage.broadcast_failed, parse_mode=ParseMode.HTML)
     except Exception as e:
         await bot.send_message(Config.OWNER_ID, line_number(fileName, e))
     else:
