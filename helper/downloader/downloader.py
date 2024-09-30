@@ -28,7 +28,7 @@ class Downloader:
         self.process_msg = await update.reply_text(BotMessage.processing_url, parse_mode=ParseMode.HTML)
         if match('^(https://)?(www.)?youtu(.)?be(.com)?/(.*)', url):
             await update.reply_text(BotMessage.youtube_url, parse_mode=ParseMode.HTML)
-        elif match('^(http(s)?://)?(www.)?(cofilink.com|pdisk1.net|pdisk.net|pdisks.com)/share-video\?videoid=(.*)', url):
+        elif match(r'^(http(s)?://)?(www\.)?(cofilink.com|pdisk1.net|pdisk.net|pdisks.com)/share-video\?videoid=(.*)', url):
             await self.pdiskRawLinkExtract()
         else:   #Normal Url
             await self.rawLinkDownloader()
