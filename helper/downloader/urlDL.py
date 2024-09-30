@@ -43,7 +43,7 @@ class URLDL:
                 remaining = downObj.get_eta(human=True)
                 percentage = int(downObj.get_progress()*100)
                 try:
-                    msg = await self.bot.edit_message_text(self.userid, msg.message_id, f"<b>Downloading... !! Keep patience...\n {progress_bar}\n📊Percentage: {percentage} %\n✅Completed: {completed}\n🚀Speed: {speed}\n⌚️Remaining Time: {remaining}</b>", parse_mode=ParseMode.HTML)
+                    msg = await self.bot.edit_message_text(self.userid, msg.id, f"<b>Downloading... !! Keep patience...\n {progress_bar}\n📊Percentage: {percentage} %\n✅Completed: {completed}\n🚀Speed: {speed}\n⌚️Remaining Time: {remaining}</b>", parse_mode=ParseMode.HTML)
                     sleep(2)
                 except exceptions.bad_request_400.MessageNotModified:
                     pass
