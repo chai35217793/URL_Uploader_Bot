@@ -20,7 +20,7 @@ class URLDL:
 
     def __init__(self, update, process_msg, bot, url, customFileName):
         self.update = update
-        self.process_msg_id = process_msg.message_id
+        self.process_msg_id = process_msg.id
         self.bot = bot
         self.url = url
         self.customFileName = customFileName
