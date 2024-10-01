@@ -57,7 +57,7 @@ class Upload:
             await self.bot.send_message(self.userid, BotMessage.unsuccessful_upload, reply_to_message_id  = self.msg_id)
             await self.bot.send_message(Config.OWNER_ID, line_number(fileName, e))
         else:
-            await self.bot.delete_messages(self.userid, self.old_msg.message_id)
+            await self.bot.delete_messages(self.userid, self.old_msg.id)
         finally:
             rmtree(self.downloadFolder)
 
